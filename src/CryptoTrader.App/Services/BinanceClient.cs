@@ -11,7 +11,7 @@ namespace CryptoTrader.App.Services;
 public class BinanceClient
 {
     private static readonly HttpClient _httpClient = new HttpClient();
-    private const string ApiUrl = "https://api.binance.com/api/v3/klines";
+    private const string ApiUrl = "https://api.binance.us/api/v3/klines";
 
     public async Task<List<KlineData>> GetHistoricalDataAsync(string symbol = "BTCUSDT", string interval = "1h", int limit = 500)
     {

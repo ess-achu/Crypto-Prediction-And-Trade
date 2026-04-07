@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Trading Dashboard</title>
+    <!-- Modern Font: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <h1>CryptoAI <span class="highlight">Engine</span></h1>
+            <div class="status-indicator">
+                <span id="bot-status-dot" class="dot"></span>
+                <span id="bot-status-text">Connecting...</span>
+            </div>
+        </header>
+
+        <div class="grid-container">
+            <!-- Left Side: Graph and Stats -->
+            <div class="main-panel">
+                <div class="card glass chart-card">
+                    <h2>Live Price Feed (<span id="pair-label">...</span>)</h2>
+                    <h3 id="current-price" class="neon-text">$0.00</h3>
+                    <div class="chart-container">
+                        <canvas id="priceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Metrics -->
+            <div class="side-panel">
+                <div class="card glass">
+                    <h2>Portfolio Status</h2>
+                    <div class="metric">
+                        <span>Balance</span>
+                        <span id="portfolio-val">$0.00</span>
+                    </div>
+                    <div class="metric">
+                        <span>Net Profit</span>
+                        <span id="profit-val">$0.00</span>
+                    </div>
+                    <div class="metric">
+                        <span>In Position</span>
+                        <span id="position-val">-</span>
+                    </div>
+                </div>
+
+                <div class="card glass">
+                    <h2>Technical Indicators</h2>
+                    <div class="metric">
+                        <span>RSI (14)</span>
+                        <span id="rsi-val">0.00</span>
+                    </div>
+                    <div class="metric">
+                        <span>MACD Line</span>
+                        <span id="macd-val">0.00</span>
+                    </div>
+                    <div class="metric">
+                        <span>Signal Line</span>
+                        <span id="signal-val">0.00</span>
+                    </div>
+                    <div class="metric">
+                        <span>Histogram</span>
+                        <span id="hist-val">0.00</span>
+                    </div>
+                </div>
+
+                <div class="card glass action-card">
+                    <h2>Action Center</h2>
+                    <p class="action-label">Last Decision:</p>
+                    <div id="last-action" class="action-badge">WAITING</div>
+                    <p class="trade-count">Total Trades: <span id="trade-count">0</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart.js framework -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
